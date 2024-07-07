@@ -46,7 +46,7 @@ export const ToastContainer = () => {
           {FromTokenIcon && <FromTokenIcon className=" w-5 h-5" />}
         </div>
         <div className="w-8 h-8 relative -left-3 bg-zinc-300 rounded-full justify-center items-center flex">
-          {ToTokenIcon && <Icons.shib className=" w-5 h-5" />}
+          {ToTokenIcon && <ToTokenIcon className=" w-5 h-5" />}
         </div>
       </div>
       <div>

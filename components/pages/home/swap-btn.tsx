@@ -45,7 +45,7 @@ export default function SwapButton({
         className={`${
           isSwapReady
             ? `${fromAmount ? " bg-secondary" : " bg-red-950"}`
-            : "bg-muted"
+            : "bg-grey"
         } w-full py-3 sm:py-4 text-white rounded-full mt-5 text-center text-base sm:text-xl font-bold capitalize`}
       >
         {fromToken.name && toToken?.name ? (

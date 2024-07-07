@@ -114,7 +114,7 @@ export default function SToken({
               : ""
           }  sm:w-72 h-72 sm:h-80 flex flex-col rounded-3xl p-6 `}
         >
-          <section className={`${token?.name || " sm:hidden"} cursor-pointer`}>
+          <section className={`${token?.name || " xlg:hidden"} cursor-pointer`}>
             <div
               onClick={() => setIsChain(true)}
               className="flex items-center gap-2 text-base font-bold sm:font-normal text-primary mb-6 capitalize group sm:mb-4 cursor-pointer w-fit"
@@ -152,7 +152,7 @@ export default function SToken({
               )}
             </div>
           </section>
-          <section className={`${token?.name || " sm:hidden"} mt-auto`}>
+          <section className={`${token?.name || " xlg:hidden"} mt-auto`}>
             <div className=" font-normal leading-normal text-base sm:text-xl text-primary">
               You {name == "fromTokens" ? "pay" : "recieve"}
             </div>

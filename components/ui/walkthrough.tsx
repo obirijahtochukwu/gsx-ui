@@ -1,3 +1,4 @@
+import { useSwap } from "@/lib/hooks/swap/useSwap";
 import React, { useState } from "react";
 
 export default function Walkthrough({
@@ -25,8 +26,7 @@ export default function Walkthrough({
   childrenStyle?: string;
   children: JSX.Element;
 }) {
-  const walkthrough: any = () => localStorage.getItem("walkthrough");
-
+  const { walkthrough } = useSwap();
   const close = () => {
     setIntroTip(-1);
     localStorage.setItem("walkthrough", "true");
@@ -37,7 +37,7 @@ export default function Walkthrough({
     <article className={`${className} relative`}>
       <div
         className={`${
-          introTip == id && introTip != 3 ? "z-40 sticky" : ""
+          introTip == id && introTip != 3 && !walkthrough() ? "z-40 sticky" : ""
         } ${childrenStyle}`}
       >
         {children}

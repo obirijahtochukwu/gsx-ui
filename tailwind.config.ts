@@ -6,6 +6,9 @@ module.exports = {
       screens: {
         xlg: "1150px",
       },
+      zIndex: {
+        1: "1",
+      },
       fontFamily: {
         monts: ["var(--font-monts)"],
         primary: ["Lexend"],
@@ -15,7 +18,7 @@ module.exports = {
       },
       colors: {
         light: "#ECECEC",
-        grey: "B7B7B7",
+        grey: "#B7B7B7",
         muted: "#686868",
         primary: "#191D20",
         white: "#fff",

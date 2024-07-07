@@ -4,27 +4,35 @@ import { tokens } from "../mock-data";
 import { Icons } from "@/components/ui/icons";
 import { useRouter } from "next/navigation";
 
+const approve_stages = [
+  { name: "Approve in wallet", Icon: Icons.wallet },
+  { name: "Sign message", Icon: Icons.signin },
+  { name: "Confirm swap", Icon: Icons.approve_swap },
+];
+
 export const useSwap = () => {
   const router = useRouter();
+  const walkthrough: any = () => localStorage.getItem("walkthrough");
 
   const [slippage, setSlippage] = useState(0);
   const [confirmSwap, setConfirmSwap] = useState(false);
   const [fromChains, setFromChains] = useState<Token[]>(tokens);
   const [toChains, setToChains] = useState<Token[]>(tokens);
-  const [fromChain, setFromChain] = useState<Token>({});
-  const [toChain, setToChain] = useState<Token>({});
+  const [fromChain, setFromChain] = useState<Token>(tokens[0] || {});
+  const [toChain, setToChain] = useState<Token>(tokens[0] || {});
   const [fromTokens, setFromTokens] = useState<Token[]>(
     tokens.map((item) => ({ ...item, category: "fromTokens" }))
   );
   const [toTokens, setToTokens] = useState<Token[]>(
     tokens.map((item) => ({ ...item, category: "toTokens" }))
   );
-  const [fromToken, setFromToken] = useState<Token>({});
-  const [toToken, setToToken] = useState<Token>({});
-  const [fromAmount, setFromAmount] = useState("");
+  const [fromToken, setFromToken] = useState<Token>(tokens[5]);
+  const [toToken, setToToken] = useState<Token>(tokens[0] || {});
+  const [fromAmount, setFromAmount] = useState("80");
   const [toAmount, setToAmount] = useState("");
   const [transactionState, setTransactionState] = useState("");
   const [introTip, setIntroTip] = useState(0);
+
   const swapInfos = [
     { name: "Max. slippage", value: `${slippage}%` },
     { name: "Fees", value: "$94.38" },
@@ -52,8 +60,15 @@ export const useSwap = () => {
   // proccessing swap and setting toast message
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if (transactionState == `pending`) {
+      if (transactionState == "Approve in wallet") {
+        setTransactionState("Sign message");
+      } else if (transactionState == "Sign message") {
+        setTransactionState("Confirm swap");
+      } else if (transactionState == "Confirm swap") {
+        setTransactionState("pending");
+      } else if (transactionState == "pending") {
         setTransactionState("success");
+      } else {
       }
     }, 3000);
 
@@ -72,19 +87,19 @@ export const useSwap = () => {
 
   // calculate token amount
   useEffect(() => {
-    if (fromAmount == "") {
-      setToAmount("");
-    } else {
+    if (fromToken.name && toToken.name && fromAmount) {
       setToAmount(`${(+fromAmount * 8.40008686874).toFixed(2)}`);
+    } else {
+      setToAmount("");
     }
-  }, [fromAmount]);
+  }, [fromAmount, fromToken.name, toToken.name]);
 
-  // automatic selection of fromToken to display walkthrough tips
+  // automatic setting of fromToken to display walkthrough tips
   useEffect(() => {
     if (introTip == 3) {
       setFromToken(fromTokens[0] || {});
     } else {
-      setFromToken({});
+      if (!walkthrough) setFromToken({});
     }
   }, [introTip]);
 
@@ -117,5 +132,7 @@ export const useSwap = () => {
     setToChain,
     introTip,
     setIntroTip,
+    approve_stages,
+    walkthrough,
   };
 };

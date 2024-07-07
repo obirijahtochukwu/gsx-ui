@@ -50,7 +50,7 @@ export default function Select({
         data={chains}
         selected={chain}
       />
-      <div className=" w-56 xl:w-side bg-light max-xlg:hidden h-fit rounded-3xl py-4">
+      <div className=" w-56 xl:w-side bg-light max-xlg:hidden h-fit rounded-3xl pt-4 pb-1 overflow-hidden">
         <div className=" text-primary text-base leading-none capitalize font-bold px-8">
           {name} Token
         </div>
@@ -93,7 +93,7 @@ export default function Select({
             introTip={introTip}
             margin="ml-3"
           >
-            <section className="h-desktop custom-scrollbar px-4 overflow-y-auto mt-3 gap-4 grid-cols-12 grid">
+            <section className="h-desktop custom-scrollbar pb-3 pl-4 pr-3 overflow-y-auto mt-3 gap-4 grid-cols-12 grid">
               {filteredList.map((token: Token, idx: number) => {
                 const { name, symbol, address, Logo } = token;
                 return (
