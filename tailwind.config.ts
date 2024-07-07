@@ -48,6 +48,10 @@ module.exports = {
       maxWidth: {
         smd: "423px",
         side: "274px",
+        home: "1440px",
+      },
+      translate: {
+        extreme: "120%",
       },
     },
   },

@@ -52,7 +52,7 @@ export default function Popup({
   return (
     <article
       className={`${
-        IsOpen ? "translate-x-0 z-40" : "-translate-x-[120%]"
+        IsOpen ? "translate-x-0 z-40" : "-translate-x-extreme"
       } duration-200 w-screen sm:max-w-sm h-screen top-0 left-0 fixed flex items-center ${
         type || "xl:hidden"
       } shadow-2xl justify-center `}

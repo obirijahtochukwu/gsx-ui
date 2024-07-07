@@ -77,7 +77,7 @@ export default function Home() {
     <PageWrapper>
       <Approve {...props} />
 
-      <article className="flex justify-between items-center max-w-[1440px] mx-auto">
+      <article className="flex justify-between items-center max-w-home mx-auto">
         <Select
           name="send"
           data={fromToken}
