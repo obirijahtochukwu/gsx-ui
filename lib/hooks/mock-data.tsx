@@ -1,0 +1,173 @@
+import { Icons } from "../../components/ui/icons";
+import { Token } from "../hooks/swap/useSwap.d";
+
+export const tokens: Token[] = [
+  {
+    name: "bitcoin",
+    symbol: "btc",
+    address: "0x2260F...C599",
+    Logo: Icons.btc,
+  },
+  {
+    name: "shibanium",
+    symbol: "shib",
+    address: "0x2260F...C599",
+    Logo: Icons.shib,
+  },
+  {
+    name: "bitcoin",
+    symbol: "btc",
+    address: "0x2260F...C599",
+    Logo: Icons.btc,
+  },
+  {
+    name: "shibanium",
+    symbol: "shib",
+    address: "0x2260F...C599",
+    Logo: Icons.shib,
+  },
+  {
+    name: "bitcoin",
+    symbol: "btc",
+    address: "0x2260F...C599",
+    Logo: Icons.btc,
+  },
+  {
+    name: "shibanium",
+    symbol: "shib",
+    address: "0x2260F...C599",
+    Logo: Icons.shib,
+  },
+  {
+    name: "eth",
+    symbol: "btc",
+    address: "0x2260F...C599",
+    Logo: Icons.btc,
+  },
+  {
+    name: "shibanium",
+    symbol: "shib",
+    address: "0x2260F...C599",
+    Logo: Icons.shib,
+  },
+  {
+    name: "bitcoin",
+    symbol: "btc",
+    address: "0x2260F...C599",
+    Logo: Icons.btc,
+  },
+  {
+    name: "shibanium",
+    symbol: "shib",
+    address: "0x2260F...C599",
+    Logo: Icons.shib,
+  },
+  {
+    name: "bitcoin",
+    symbol: "btc",
+    address: "0x2260F...C599",
+    Logo: Icons.btc,
+  },
+  {
+    name: "shibanium",
+    symbol: "shib",
+    address: "0x2260F...C599",
+    Logo: Icons.shib,
+  },
+  {
+    name: "bitcoin",
+    symbol: "btc",
+    address: "0x2260F...C599",
+    Logo: Icons.btc,
+  },
+  {
+    name: "shibanium",
+    symbol: "shib",
+    address: "0x2260F...C599",
+    Logo: Icons.shib,
+  },
+  {
+    name: "bitcoin",
+    symbol: "btc",
+    address: "0x2260F...C599",
+    Logo: Icons.btc,
+  },
+  {
+    name: "shibanium",
+    symbol: "shib",
+    address: "0x2260F...C599",
+    Logo: Icons.shib,
+  },
+  {
+    name: "bitcoin",
+    symbol: "btc",
+    address: "0x2260F...C599",
+    Logo: Icons.btc,
+  },
+  {
+    name: "shibanium",
+    symbol: "shib",
+    address: "0x2260F...C599",
+    Logo: Icons.shib,
+  },
+  {
+    name: "bitcoin",
+    symbol: "btc",
+    address: "0x2260F...C599",
+    Logo: Icons.btc,
+  },
+  {
+    name: "shibanium",
+    symbol: "shib",
+    address: "0x2260F...C599",
+    Logo: Icons.shib,
+  },
+  {
+    name: "bitcoin",
+    symbol: "btc",
+    address: "0x2260F...C599",
+    Logo: Icons.btc,
+  },
+  {
+    name: "shibanium",
+    symbol: "shib",
+    address: "0x2260F...C599",
+    Logo: Icons.shib,
+  },
+  {
+    name: "bitcoin",
+    symbol: "btc",
+    address: "0x2260F...C599",
+    Logo: Icons.btc,
+  },
+  {
+    name: "shibanium",
+    symbol: "shib",
+    address: "0x2260F...C599",
+    Logo: Icons.shib,
+  },
+  {
+    name: "bitcoin",
+    symbol: "btc",
+    address: "0x2260F...C599",
+    Logo: Icons.btc,
+  },
+  {
+    name: "shibanium",
+    symbol: "shib",
+    address: "0x2260F...C599",
+    Logo: Icons.shib,
+  },
+  {
+    name: "bitcoin",
+    symbol: "btc",
+    address: "0x2260F...C599",
+    Logo: Icons.btc,
+  },
+  {
+    name: "shibanium",
+    symbol: "shib",
+    address: "0x2260F...C599",
+    Logo: Icons.shib,
+  },
+];
