@@ -16,10 +16,8 @@ export const ToastContainer = () => {
   const router = useRouter();
   const { fromTokens, toTokens } = useSwap();
 
-  const FromTokenIcon = fromTokens.find(
-    (item) => item.symbol == store.from
-  )?.Logo;
-  const ToTokenIcon = toTokens.find((item) => item.symbol == store.from)?.Logo;
+  const FromTokenIcon = fromTokens.find((item) => item.symbol == store.from);
+  const ToTokenIcon = toTokens.find((item) => item.symbol == store.to);
   console.log(store.to);
 
   const close = () => {
@@ -34,6 +32,9 @@ export const ToastContainer = () => {
       to_amount: searchParams.get("to-amount") || "",
     });
   }, [searchParams]);
+  console.log(FromTokenIcon);
+  console.log(ToTokenIcon);
+  console.log(store);
 
   return (
     <div
@@ -43,10 +44,10 @@ export const ToastContainer = () => {
     >
       <div className="flex items-center">
         <div className="w-8 h-8 bg-zinc-300 rounded-full justify-center items-center flex">
-          {FromTokenIcon && <FromTokenIcon className=" w-5 h-5" />}
+          {FromTokenIcon?.Logo && <FromTokenIcon.Logo className=" w-5 h-5" />}
         </div>
         <div className="w-8 h-8 relative -left-3 bg-zinc-300 rounded-full justify-center items-center flex">
-          {ToTokenIcon && <ToTokenIcon className=" w-5 h-5" />}
+          {ToTokenIcon?.Logo && <ToTokenIcon.Logo className=" w-5 h-5" />}
         </div>
       </div>
       <div>

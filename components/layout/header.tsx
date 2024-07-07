@@ -30,7 +30,7 @@ export default function Header() {
       <ConnectWallet {...props} />
 
       {/* <---------- desktop nav ----------> */}
-      <nav className="flex max-sm:hidden mb-10 items-center">
+      <nav className="flex max-sm:hidden mb-10 items-center max-w-home mx-auto">
         <Icons.logo />
         <section className="flex items-cente gap-8 mr-auto ml-10">
           {links.map(({ url, name }, idx) => (

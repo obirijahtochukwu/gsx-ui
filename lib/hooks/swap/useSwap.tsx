@@ -18,17 +18,17 @@ export const useSwap = () => {
   const [confirmSwap, setConfirmSwap] = useState(false);
   const [fromChains, setFromChains] = useState<Token[]>(tokens);
   const [toChains, setToChains] = useState<Token[]>(tokens);
-  const [fromChain, setFromChain] = useState<Token>(tokens[0] || {});
-  const [toChain, setToChain] = useState<Token>(tokens[0] || {});
+  const [fromChain, setFromChain] = useState<Token>({});
+  const [toChain, setToChain] = useState<Token>({});
   const [fromTokens, setFromTokens] = useState<Token[]>(
     tokens.map((item) => ({ ...item, category: "fromTokens" }))
   );
   const [toTokens, setToTokens] = useState<Token[]>(
     tokens.map((item) => ({ ...item, category: "toTokens" }))
   );
-  const [fromToken, setFromToken] = useState<Token>(tokens[5]);
-  const [toToken, setToToken] = useState<Token>(tokens[0] || {});
-  const [fromAmount, setFromAmount] = useState("80");
+  const [fromToken, setFromToken] = useState<Token>({});
+  const [toToken, setToToken] = useState<Token>({});
+  const [fromAmount, setFromAmount] = useState("");
   const [toAmount, setToAmount] = useState("");
   const [transactionState, setTransactionState] = useState("");
   const [introTip, setIntroTip] = useState(0);
