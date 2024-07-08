@@ -31,7 +31,7 @@ export default function SlippageSettings({
       <section
         className={`${
           isOpen ? "h-36" : "sm:h-16 h-12"
-        } overflow-hidden duration-300 absolute shadow-2xl right-0 invisible group-hover:visible top-full w-72 z-30 sm:w-80 bg-light bg-opacity-10 rounded-2xl group-hover:opacity-100 px-5 sm:p-5 border border-white border-opacity-5 backdrop-blur-2xl`}
+        } overflow-hidden duration-300 absolute shadow-gsx right-0 invisible group-hover:visible top-full w-72 z-30 sm:w-80 bg-light/70 rounded-2xl group-hover:opacity-100 px-5 sm:p-5 border border-white border-opacity-5 backdrop-blur-md`}
       >
         <div
           onClick={() => setIsOpen(!isOpen)}
