@@ -1,14 +1,8 @@
 import { useEffect, useState } from "react";
 import { Token } from "./useSwap.d";
-import { tokens } from "../mock-data";
+import { tokens, approve_stages } from "../mock-data";
 import { Icons } from "@/components/ui/icons";
 import { useRouter } from "next/navigation";
-
-const approve_stages = [
-  { name: "Approve in wallet", Icon: Icons.wallet },
-  { name: "Sign message", Icon: Icons.signin },
-  { name: "Confirm swap", Icon: Icons.approve_swap },
-];
 
 export const useSwap = () => {
   const router = useRouter();
@@ -58,11 +52,15 @@ export const useSwap = () => {
   // proccessing swap and setting toast message
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if (transactionState == "Approve in wallet") {
-        setTransactionState("Sign message");
-      } else if (transactionState == "Sign message") {
-        setTransactionState("Confirm swap");
-      } else if (transactionState == "Confirm swap") {
+      if (transactionState == "Near (Ethereum)") {
+        setTransactionState("Near (Ethereum) to USDC (Ethereum)");
+      } else if (transactionState == "Near (Ethereum) to USDC (Ethereum)") {
+        setTransactionState("USDC (Ethereum) to USDC (Polygon)");
+      } else if (transactionState == "USDC (Ethereum) to USDC (Polygon)") {
+        setTransactionState("USDC (Ethereum) to Vechain (Polygon)");
+      } else if (transactionState == "USDC (Ethereum) to Vechain (Polygon)") {
+        setTransactionState("Vechain (Polygon)");
+      } else if (transactionState == "Vechain (Polygon)") {
         setTransactionState("pending");
       } else if (transactionState == "pending") {
         setTransactionState("success");

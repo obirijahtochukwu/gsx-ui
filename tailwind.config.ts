@@ -25,6 +25,7 @@ module.exports = {
         white: "#fff",
         gray: "#F6F6F6",
         secondary: "#4E55F1",
+        warning: "#FFFBA8",
         error: "#FFC2C2",
         success: "#D7FFBE",
         link: "#0057FF",

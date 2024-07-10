@@ -171,3 +171,37 @@ export const tokens: Token[] = [
     Logo: Icons.shib,
   },
 ];
+
+export const approve_stages = [
+  {
+    name: "Near (Ethereum)",
+    icons: [{ Chain: Icons.ethereum, Icon: Icons.near }],
+  },
+  {
+    name: "Near (Ethereum) to USDC (Ethereum)",
+    icons: [
+      { Chain: Icons.ethereum, Icon: Icons.near },
+      { Chain: Icons.ethereum, Icon: Icons.usdc },
+    ],
+  },
+  {
+    name: "USDC (Ethereum) to USDC (Polygon)",
+    icons: [
+      { Chain: Icons.ethereum, Icon: Icons.usdc },
+      { Chain: Icons.polygon, Icon: Icons.usdc },
+    ],
+  },
+
+  {
+    name: "USDC (Ethereum) to Vechain (Polygon)",
+    icons: [
+      { Chain: Icons.ethereum, Icon: Icons.usdc },
+      { Chain: Icons.polygon, Icon: Icons.vechain },
+    ],
+  },
+
+  {
+    name: "Vechain (Polygon)",
+    icons: [{ Chain: Icons.polygon, Icon: Icons.vechain }],
+  },
+];

@@ -91,7 +91,10 @@ export default function Popup({
                 ({ name, symbol, address, Logo }: Token, idx: number) => (
                   <article
                     key={idx}
-                    onClick={() => handleClick({ name, symbol, address, Logo })}
+                    onClick={() => {
+                      handleClick({ name, symbol, address, Logo });
+                      setIsOpen(!isOpen);
+                    }}
                     className="cursor-pointer flex items-center font-normal text-primary gap-1.5 text-base"
                   >
                     <Logo className="h-9 w-9" />

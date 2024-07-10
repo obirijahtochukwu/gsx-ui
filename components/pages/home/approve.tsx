@@ -32,7 +32,7 @@ export default function Approve({
   const ToTokenIcon = toToken?.Logo;
   const { approve_stages } = useSwap();
 
-  const stages = approve_stages.find((item) =>
+  const isProccessing = approve_stages.find((item) =>
     transactionState.includes(item.name)
   );
 
@@ -60,10 +60,12 @@ export default function Approve({
     <Dialog
       IsOpen={confirmSwap}
       onClose={close}
-      form={transactionState == "pending" ? true : stages ? true : false}
+      form={transactionState == "pending" ? true : isProccessing ? true : false}
       classname=" gap-6 max-sm:!pb-12"
     >
-      {display ? (
+      {isProccessing ? (
+        <ApproveStage {...props} />
+      ) : display ? (
         <>
           <div className="text-base sm:text-sm text-primary font-bold">
             Review Swap
@@ -91,37 +93,30 @@ export default function Approve({
             </div>
             {toToken?.Logo && <ToTokenIcon />}
           </section>
-
-          {stages ? (
-            <ApproveStage {...props} />
-          ) : (
-            <>
-              <section className={`flex flex-col gap-3.5`}>
-                {swapInfos.map(({ name, value }, idx) => (
-                  <div
-                    key={idx}
-                    className="flex text-xs gap-2 font-normal justify-between"
-                  >
-                    <div className=" text-muted flex gap-1 items-center">
-                      {name} <Icons.info />
-                    </div>
-                    {idx == 0 && (
-                      <div className="w-10 h-5 ml-auto bg-orange-100 rounded-full justify-center items-center flex text-stone-500 text-xs font-normal">
-                        Auto
-                      </div>
-                    )}
-                    {value}
-                  </div>
-                ))}
-              </section>
-              <button
-                onClick={() => setTransactionState("Approve in wallet")}
-                className=" bg-secondary w-full rounded-full flex items-center justify-center h-11 text-white text-base font-bold"
+          <section className={`flex flex-col gap-3.5`}>
+            {swapInfos.map(({ name, value }, idx) => (
+              <div
+                key={idx}
+                className="flex text-xs gap-2 font-normal justify-between"
               >
-                Approve and Swap
-              </button>
-            </>
-          )}
+                <div className=" text-muted flex gap-1 items-center">
+                  {name} <Icons.info />
+                </div>
+                {idx == 0 && (
+                  <div className="w-10 h-5 ml-auto bg-orange-100 rounded-full justify-center items-center flex text-stone-500 text-xs font-normal">
+                    Auto
+                  </div>
+                )}
+                {value}
+              </div>
+            ))}
+          </section>
+          <button
+            onClick={() => setTransactionState(approve_stages[0]!.name)}
+            className=" bg-secondary w-full rounded-full flex items-center justify-center h-11 text-white text-base font-bold"
+          >
+            Approve and Swap
+          </button>
         </>
       ) : (
         <Proccessing {...props} />
