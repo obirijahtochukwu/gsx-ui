@@ -30,14 +30,15 @@ export default function Walkthrough({
   const close = () => {
     setIntroTip(-1);
     localStorage.setItem("walkthrough", "true");
-    return "bri";
   };
 
   return (
     <article className={`${className} relative`}>
       <div
         className={`${
-          introTip == id && introTip != 3 && !walkthrough() ? "z-40 sticky" : ""
+          introTip == id && introTip != 3 && !walkthrough()
+            ? "xlg:z-40 xlg:sticky"
+            : ""
         } ${childrenStyle}`}
       >
         {children}
@@ -76,7 +77,10 @@ export default function Walkthrough({
               >
                 Next
               </div>
-              <div className=" text-dust font-semibold text-sm cursor-pointer p-2">
+              <div
+                onClick={close}
+                className=" text-dust font-semibold text-sm cursor-pointer p-2"
+              >
                 Skip
               </div>
               <div className=" text-xs text-white ml-auto font-medium">

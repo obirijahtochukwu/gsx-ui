@@ -100,7 +100,7 @@ export default function Home() {
             </Walkthrough>
             <SlippageSettings {...props} />
           </section>
-          <div className="flex max-sm:flex-col relative gap-2 h-fit">
+          <div className="flex max-sm:flex-col relative justify-between h-fit xlg:gap-2">
             <SToken
               {...props}
               name={"fromTokens"}

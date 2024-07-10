@@ -47,7 +47,7 @@ export default function Dialog({
           IsOpen
             ? " visible opacity-100 z-40"
             : " invisible opacity-0 duration-200"
-        } duration-100 w-screen h-screen bg-white/40 backdrop-blur-sm top-0 left-0 fixed flex items-center justify-center `}
+        } duration-100 w-screen h-screen bg-primary/50 top-0 left-0 fixed flex items-center justify-center `}
       ></article>
       <section
         ref={targetRef}
@@ -55,9 +55,9 @@ export default function Dialog({
           classname +
           `${
             IsOpen
-              ? " max-sm:translate-y-0 opacity-100 sm:slide-top z-40 sm:-translate-y-1/2"
-              : " translate-y-full opacity-0 sm:!hidden"
-          } sm:-translate-x-1/2 sm:left-1/2 rounded-tl-2xl duration-300 rounded-tr-2xl sm:rounded-3xl fixed left-0 bottom-0 transform h-fit sm:top-1/2 sm:p-6 flex flex-col p-4 border border-white/10  w-full sm:w-80 bg-gray shadow-gsx`
+              ? " max-sm:translate-y-0 opacity-100 sm:slide-top sm:-translate-y-1/2"
+              : " translate-y-full opacity-0"
+          } z-40 sm:-translate-x-1/2 sm:left-1/2 rounded-tl-2xl duration-300 rounded-tr-2xl sm:rounded-3xl fixed left-0 bottom-0 transform h-fit sm:top-1/2 sm:p-6 flex flex-col p-4 border border-white/10  w-full sm:w-80 bg-gray shadow-gsx`
         }
       >
         {form || (

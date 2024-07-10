@@ -17,6 +17,7 @@ module.exports = {
         "2xlg": "28px",
       },
       colors: {
+        token: "#9F9F9F",
         light: "#ECECEC",
         grey: "#B7B7B7",
         muted: "#686868",
@@ -35,7 +36,7 @@ module.exports = {
         "max-sm": "140% 600px",
       },
       height: {
-        mobile: "calc(100% - 230px)",
+        mobile: "503px",
         desktop: "calc(100vh - 320px)",
       },
       width: {
@@ -43,7 +44,7 @@ module.exports = {
       },
       boxShadow: {
         token: "0px 4px 12px 0px rgba(0, 0, 0, 0.25)",
-        gsx: "6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;",
+        gsx: " 10px 10px 30px rgba(0, 0, 0, 0.3), inset -10px -10px 30px rgba(255, 255, 255, 0.3)",
       },
       maxWidth: {
         smd: "423px",

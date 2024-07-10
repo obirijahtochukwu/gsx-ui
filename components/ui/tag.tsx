@@ -9,7 +9,7 @@ export default function Tag({
   icon: JSX.Element;
 }) {
   return (
-    <div className="flex cursor-pointer w-fit h-10 p-2 bg-secondary/25 rounded-full text-xl font-normal uppercase text-primary items-center gap-2">
+    <div className="flex cursor-pointer w-fit h-10 p-2 bg-light rounded-full text-xl font-normal uppercase items-center gap-2 border border-secondary text-secondary">
       {icon}
       {symbol}
     </div>

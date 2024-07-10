@@ -40,8 +40,6 @@ export const useSwap = () => {
     { name: "Transaction time", value: "5-8 mins." },
   ];
 
-  const draggedItem = JSON.parse(localStorage.getItem("draggedItem") || "");
-
   // change token position
   const swapPosition = () => {
     setFromToken(toToken);
@@ -99,7 +97,7 @@ export const useSwap = () => {
     if (introTip == 3) {
       setFromToken(fromTokens[0] || {});
     } else {
-      if (!walkthrough) setFromToken({});
+      if (!walkthrough()) setFromToken({});
     }
   }, [introTip]);
 
@@ -116,7 +114,6 @@ export const useSwap = () => {
     fromTokens,
     toTokens,
     swapToken,
-    draggedItem,
     confirmSwap,
     setConfirmSwap,
     transactionState,

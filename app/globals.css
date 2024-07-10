@@ -14,7 +14,7 @@ body {
 
 /* Track */
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
+  background: #f2f2f2;
   border-radius: 100px;
 }
 
@@ -171,7 +171,7 @@ body {
 }
 
 .slide-top {
-  animation: slide-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 3s linear;
 }
 
 @keyframes slide-top {

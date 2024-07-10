@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Icons } from "./icons";
 import { Chain, Token } from "../../lib/hooks/swap/useSwap.d";
-import Popup from "./popup";
 import { Coin } from "./coin";
 import Walkthrough from "./walkthrough";
+import Dropdown from "./dropdown";
+import { clickedOutside } from "@/lib/regrex";
+import { useSwap } from "@/lib/hooks/swap/useSwap";
 
 export default function Select({
   duplicateItem,
@@ -32,7 +34,8 @@ export default function Select({
 }) {
   const [IsOpen, setIsOpen] = useState(false);
   const [searchVal, setSearchVal] = useState("");
-  const [IsChain, setIsChain] = useState(false);
+  const { walkthrough } = useSwap();
+  const dropdown = clickedOutside();
 
   const filteredList = tokens.filter(
     (token: any) =>
@@ -42,15 +45,11 @@ export default function Select({
 
   return (
     <>
-      <Popup
-        type={"chain"}
-        IsOpen={IsChain}
-        setIsOpen={setIsChain}
-        handleClick={(chain: Chain) => setChain(chain)}
-        data={chains}
-        selected={chain}
-      />
-      <div className=" w-56 xl:w-side bg-light max-xlg:hidden h-fit rounded-3xl pt-4 pb-1 overflow-hidden">
+      <div
+        className={`${
+          walkthrough() && " overflow-hidden"
+        } w-56 xl:w-side bg-light max-xlg:hidden h-fit rounded-3xl pt-4 pb-1`}
+      >
         <div className=" text-primary text-base leading-none capitalize font-bold px-8">
           {name} Token
         </div>
@@ -65,11 +64,18 @@ export default function Select({
           margin="ml-3"
         >
           <div
-            onClick={() => setIsChain(true)}
-            className={`h-10 mt-4 mx-4 bg-white w-auto gap-3 sm:gap-4 rounded-2xl text-muted text-sm font-normal items-center flex px-4 cursor-pointer capitalize`}
+            ref={dropdown.targetRef}
+            onClick={() => dropdown.setIsOpen(!dropdown.isOpen)}
+            className={`h-10 mt-4 mx-4 bg-white w-auto gap-3 sm:gap-4 rounded-2xl text-muted text-sm font-normal items-center flex px-4 cursor-pointer capitalize relative`}
           >
             {chain?.name || "Select Network"}
             <Icons.dropdown className=" w-3.5 h-2 ml-auto" />
+            <Dropdown
+              IsOpen={dropdown.isOpen}
+              handleClick={(chain: Chain) => setChain(chain)}
+              chains={chains}
+              chain={chain}
+            />
           </div>
         </Walkthrough>
         <div className="h-10 mt-6 bg-white mx-4 w-auto gap-1 sm:gap-2 rounded-2xl items-center flex px-4">
