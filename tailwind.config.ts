@@ -52,6 +52,9 @@ module.exports = {
         side: "274px",
         home: "1440px",
       },
+      minHeight: {
+        medium: "500px",
+      },
       translate: {
         extreme: "120%",
       },

@@ -144,7 +144,11 @@ export default function SToken({
                 />
               </div>
               <div
-                onClick={() => setIsToken(true)}
+                onClick={() =>
+                  window.innerWidth < 1150.1
+                    ? setIsToken(true)
+                    : setIsToken(IsToken)
+                }
                 className="text-primary  text-xl max-xlg:cursor-pointer"
               >
                 <div className="font-normal flex items-center gap-2 uppercase">
@@ -159,7 +163,7 @@ export default function SToken({
                     </>
                   )}
                   <Icons.dropdown
-                    className={`${token.name || "ml-auto"} h-4 w-4`}
+                    className={`${token.name || "ml-auto"} h-4 w-4 xlg:hidden`}
                   />
                 </div>
                 <div className="font-medium capitalize">{token?.name}</div>

@@ -17,7 +17,7 @@ export default function PageWrapper({
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
         <ToastContainer />
-        <article className="p-4 max-sm:pb-10 z-10 sm:py-8 sm:px-10">
+        <article className="p-4 max-sm:pb-10 z sm:py-8 sm:px-10">
           <section className=" max-sm:hidden">
             <img
               src="/media/home/bg.png"

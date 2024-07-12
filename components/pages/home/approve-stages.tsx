@@ -60,20 +60,24 @@ export default function ApproveStage({
               className={`${idx == 4 && "hidden"} h-2 w-px bg-muted mb-4 mt-2`}
             />
           </aside>
-          <main className="flex gap-2 leading-none items-start text-xs text-secondary font-normal">
+          <main
+            className={`${
+              isActive(name, idx) ? "text-secondary" : "text-token"
+            } flex gap-2 leading-none items-start text-xs font-normal`}
+          >
             <div className="flex flex-col items-center relative">
               <div
                 className={`${
                   isActive(name, idx)
                     ? " bg-secondary"
-                    : "bg-white border-muted"
+                    : "bg-white border-token"
                 } w-3.5 h-3.5 rounded-full border z-10 flex items-center justify-center duration-200`}
               >
                 <Icons.mark color="#F6F6F6" className="h-1 w-1.5" />
               </div>
               <div
                 className={`${idx == 4 && "hidden"} ${
-                  isActive(name, idx) ? " bg-secondary" : "bg-muted"
+                  isActive(name, idx) ? " bg-secondary" : "bg-token"
                 } absolute h-14 w-1 top-11/12 duration-200`}
               ></div>
             </div>

@@ -56,7 +56,9 @@ export const Coin = ({
     if (duplicateItem) {
       duplicateItem.style.left = event.clientX + "px";
       duplicateItem.style.top = event.clientY + "px";
-      duplicateItem.style.transform = "translateX(-60px) rotate(-45deg)";
+      duplicateItem.style.transform = `translateX(-60px) rotate(${
+        draggedItem.category == "toTokens" ? "45deg" : "-45deg"
+      })`;
     }
   };
 
