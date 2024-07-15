@@ -198,7 +198,7 @@ export default function SToken({
                 {amount ? "$35,315.05" : "$0"}
               </div>
             </section>
-            {token?.name ? null : <NoToken setIsOpen={setIsToken} />}
+            {token?.name ? null : <NoToken />}
           </>
         </main>
       </Walkthrough>

@@ -8,7 +8,6 @@ export const useSwap = () => {
   const router = useRouter();
   const walkthrough: any = () => localStorage.getItem("walkthrough");
 
-  const [slippage, setSlippage] = useState(0);
   const [confirmSwap, setConfirmSwap] = useState(false);
   const [fromChains, setFromChains] = useState<Token[]>(tokens);
   const [toChains, setToChains] = useState<Token[]>(tokens);
@@ -26,12 +25,16 @@ export const useSwap = () => {
   const [toAmount, setToAmount] = useState("");
   const [transactionState, setTransactionState] = useState("");
   const [introTip, setIntroTip] = useState(0);
+  const [slippage, setSlippage] = useState(0);
+  const [fees, setFees] = useState("$94.38");
+  const [priceImpact, setPriceImpact] = useState("-2.3%");
+  const [transactionTime, setTransactionTime] = useState("5-8 mins.");
 
   const swapInfos = [
     { name: "Max. slippage", value: `${slippage}%` },
-    { name: "Fees", value: "$94.38" },
-    { name: "Price impact", value: "-2.3%" },
-    { name: "Transaction time", value: "5-8 mins." },
+    { name: "Fees", value: fees },
+    { name: "Price impact", value: priceImpact },
+    { name: "Transaction time", value: transactionTime },
   ];
 
   // change token position

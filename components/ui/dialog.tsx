@@ -20,7 +20,6 @@ export default function Dialog({
     const close = (e: any) => {
       if (!form) {
         if (targetRef.current && !targetRef.current.contains(e.target)) {
-          console.log(form);
           onClose();
         }
       }

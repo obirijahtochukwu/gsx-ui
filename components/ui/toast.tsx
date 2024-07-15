@@ -18,7 +18,6 @@ export const ToastContainer = () => {
 
   const FromTokenIcon = fromTokens.find((item) => item.symbol == store.from);
   const ToTokenIcon = toTokens.find((item) => item.symbol == store.to);
-  console.log(store.to);
 
   const close = () => {
     router.push("/");
@@ -32,9 +31,6 @@ export const ToastContainer = () => {
       to_amount: searchParams.get("to-amount") || "",
     });
   }, [searchParams]);
-  console.log(FromTokenIcon);
-  console.log(ToTokenIcon);
-  console.log(store);
 
   return (
     <div

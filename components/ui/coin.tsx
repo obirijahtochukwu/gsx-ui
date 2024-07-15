@@ -33,7 +33,6 @@ export const Coin = ({
       JSON.stringify({ ...token, id: idx })
     );
     setDraggedItem(token);
-    console.log(token);
 
     // Create a duplicate item
     const clone = event.target.cloneNode(true);
