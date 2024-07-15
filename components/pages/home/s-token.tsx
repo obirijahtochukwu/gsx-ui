@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Chain, Token } from "../../../lib/hooks/swap/useSwap.d";
 import { onChange } from "../../../lib/regrex";
 import { Icons } from "@/components/ui/icons";
@@ -104,6 +104,7 @@ export default function SToken({
         selected={token}
       />
       {/*------------------------ modal end ------------------------*/}
+
       <Walkthrough
         id={3}
         title="Enter Amount"

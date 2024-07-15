@@ -11,9 +11,7 @@ export default function Select({
   duplicateItem,
   setDuplicateItem,
   name,
-  data,
   tokens,
-  handleClick,
   chain,
   setChain,
   chains,
@@ -23,7 +21,6 @@ export default function Select({
   name: string;
   data?: Token;
   tokens: Token[];
-  handleClick: any;
   duplicateItem: null;
   setDuplicateItem: React.Dispatch<null>;
   chain: Chain;
@@ -32,7 +29,6 @@ export default function Select({
   introTip: number;
   setIntroTip: React.Dispatch<number>;
 }) {
-  const [IsOpen, setIsOpen] = useState(false);
   const [searchVal, setSearchVal] = useState("");
   const { walkthrough } = useSwap();
   const dropdown = useClick();
@@ -109,9 +105,6 @@ export default function Select({
                   idx={idx}
                   symbol={symbol}
                   Logo={Logo}
-                  onClick={() => {
-                    setIsOpen(false);
-                  }}
                   duplicateItem={duplicateItem}
                   setDuplicateItem={setDuplicateItem}
                 />
@@ -120,7 +113,7 @@ export default function Select({
           </section>
         </Walkthrough>
       ) : searchVal && filteredList.length == 0 ? (
-        <div className=" h-desktop bg-white bg-opacity-5 rounded-lg border border-white border-opacity-10 justify-center items-center text-primary text-base font-normal flex">
+        <div className="min-h-medium h-desktop bg-white bg-opacity-5 rounded-lg border border-white border-opacity-10 justify-center items-center text-primary text-base font-normal flex">
           No result found!
         </div>
       ) : null}

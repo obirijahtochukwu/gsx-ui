@@ -1,6 +1,5 @@
 import useLocalStorage from "@/lib/hooks/local-storage";
 import { Token } from "@/lib/hooks/swap/useSwap.d";
-import { useState } from "react";
 
 export const Coin = ({
   duplicateItem,
@@ -10,14 +9,12 @@ export const Coin = ({
   name,
   symbol,
   Logo,
-  onClick,
 }: {
   token: Token;
   idx: number;
   name?: string;
   symbol?: string;
   Logo: any;
-  onClick: any;
   duplicateItem: any;
   setDuplicateItem: React.Dispatch<null>;
 }) => {
@@ -75,7 +72,6 @@ export const Coin = ({
       onDragEnd={handleDragEnd}
       onDrag={handleDrag}
       onDragStart={(e) => handleDragStart(e, idx)}
-      onClick={() => onClick()}
       className="shadow-token col-span-12 bg-white rounded-2xl flex items-center cursor-grab font-normal text-muted px-4 h-16 gap-1.5 hover:border-secondary border-4 border-transparent hover:shadow-none duration-50 text-xs"
     >
       <div className="">
