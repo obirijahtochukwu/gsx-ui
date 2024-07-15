@@ -29,7 +29,7 @@ export default function Walkthrough({
   const { walkthrough } = useSwap();
   const close = () => {
     setIntroTip(-1);
-    localStorage.setItem("walkthrough", "true");
+    window?.localStorage.setItem("walkthrough", "true");
   };
 
   return (

@@ -54,14 +54,16 @@ export default function SToken({
 
   const handleDrop = (e: any) => {
     if (duplicateItem?.style) {
-      const draggedItem = JSON.parse(localStorage.getItem("draggedItem") || "");
+      const draggedItem = JSON.parse(
+        window?.localStorage.getItem("draggedItem") || ""
+      );
       const itemId = JSON.parse(e.dataTransfer.getData("text/plain"));
       const item = tokens.find((item, idx) => idx === itemId.id) || {};
       setDragSuccess(false);
       if (draggedItem?.category == name) {
         setToken(item);
       } else {
-        localStorage.removeItem("draggedItem");
+        window?.localStorage.removeItem("draggedItem");
         setDragErr(false);
       }
     }
