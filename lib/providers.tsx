@@ -1,6 +1,6 @@
 import { createConfig, http } from "wagmi";
 import { mainnet } from "wagmi/chains";
-import chains from "wagmi/chains";
+import * as chains from "wagmi/chains";
 
 import { getDefaultConfig } from "connectkit";
 

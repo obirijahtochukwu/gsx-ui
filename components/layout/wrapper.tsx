@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "./header";
 import { config } from "../../lib/providers";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WagmiProvider } from "wagmi";
-import { ToastContainer } from "../ui/toast";
 import { Icons } from "../ui/icons";
 
 const queryClient = new QueryClient();
@@ -16,7 +15,6 @@ export default function PageWrapper({
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <ToastContainer />
         <article className="p-4 max-sm:pb-10 z sm:py-8 sm:px-10">
           <section className=" max-sm:hidden">
             <img

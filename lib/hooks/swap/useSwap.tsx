@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 export const useSwap = () => {
   const router = useRouter();
-  const walkthrough: any = () => localStorage.getItem("walkthrough");
+  const walkthrough: any = () => localStorage?.getItem("walkthrough");
 
   const [confirmSwap, setConfirmSwap] = useState(false);
   const [fromChains, setFromChains] = useState<Token[]>(tokens);

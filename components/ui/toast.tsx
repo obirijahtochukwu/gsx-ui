@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Icons } from "./icons";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
