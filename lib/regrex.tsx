@@ -26,29 +26,6 @@ export const copyText = (address: string) => {
     .then(() => alert(`${address} copied to clipboard`));
 };
 
-export const clickedOutside = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const targetRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    const close = (e: any) => {
-      if (targetRef.current && !targetRef.current.contains(e.target)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", close);
-    return () => {
-      document.removeEventListener("mousedown", close);
-    };
-  }, [targetRef]);
-
-  return {
-    isOpen,
-    setIsOpen,
-    targetRef,
-  };
-};
-
 export const clickOutsideModal = ({
   isOpen,
   setIsOpen,

@@ -4,8 +4,8 @@ import { Chain, Token } from "../../lib/hooks/swap/useSwap.d";
 import { Coin } from "./coin";
 import Walkthrough from "./walkthrough";
 import Dropdown from "./dropdown";
-import { clickedOutside } from "@/lib/regrex";
 import { useSwap } from "@/lib/hooks/swap/useSwap";
+import { useClick } from "@/lib/hooks/useclick";
 
 export default function Select({
   duplicateItem,
@@ -35,7 +35,7 @@ export default function Select({
   const [IsOpen, setIsOpen] = useState(false);
   const [searchVal, setSearchVal] = useState("");
   const { walkthrough } = useSwap();
-  const dropdown = clickedOutside();
+  const dropdown = useClick();
 
   const filteredList = tokens.filter(
     (token: any) =>

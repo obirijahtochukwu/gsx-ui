@@ -6,8 +6,8 @@ import NoToken from "./no-token";
 import Popup from "@/components/ui/popup";
 import Walkthrough from "@/components/ui/walkthrough";
 import Dropdown from "@/components/ui/dropdown";
-import { clickedOutside } from "@/lib/regrex";
 import { useSwap } from "@/lib/hooks/swap/useSwap";
+import { useClick } from "@/lib/hooks/useclick";
 
 export default function SToken({
   name,
@@ -36,7 +36,7 @@ export default function SToken({
   introTip: number;
   setIntroTip: React.Dispatch<number>;
 }) {
-  const dropdown = clickedOutside();
+  const dropdown = useClick();
   const [dragErr, setDragErr] = useState(false);
   const [dragSuccess, setDragSuccess] = useState(false);
   const [IsToken, setIsToken] = useState(false);
