@@ -81,7 +81,6 @@ export default function Home() {
         <Select
           name="send"
           data={fromToken}
-          handleClick={(token: Token) => setFromToken(token)}
           tokens={fromTokens}
           chain={fromChain}
           setChain={setFromChain}
@@ -134,7 +133,6 @@ export default function Home() {
           name="recieve"
           data={toToken}
           tokens={toTokens}
-          handleClick={(token: Token) => setToToken(token)}
           chain={toChain}
           setChain={setToChain}
           chains={toChains}
