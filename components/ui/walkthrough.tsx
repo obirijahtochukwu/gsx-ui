@@ -48,7 +48,7 @@ export default function Walkthrough({
           id == 1 && introTip > -1
             ? " visible opacity-100 z-30"
             : " invisible opacity-0 duration-200"
-        } duration-300 w-screen h-screen top-0 left-0 fixed bg-walkthrough/50`}
+        } duration-300 w-screen h-screen top-0 left-0 max-xlg:!hidden fixed bg-walkthrough/50`}
       ></section>
 
       <section
@@ -56,7 +56,7 @@ export default function Walkthrough({
           position || "left-full"
         } ${margin} ${
           walkthrough() == "true" && "hidden"
-        } absolute top-1/2 -translate-y-1/2 h-fit w-80 rounded-lg p-3 flex-col gap-1 bg-walkthrough z-40`}
+        } absolute top-1/2 -translate-y-1/2 h-fit w-80 rounded-lg p-3 flex-col gap-1 bg-walkthrough z-40 max-xlg:!hidden`}
       >
         <div
           className={`${
