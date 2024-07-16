@@ -86,7 +86,7 @@ export default function Popup({
           </div>
 
           {filteredList.length > 0 ? (
-            <main className="h-80 mt-3.5 pl-4 sm:pl-7 pb-3 pr-5 mr-2 mb-0.5 custom-scrollbar overflow-y-auto flex flex-col gap-5">
+            <main className="h-xs sm:h-80 mt-3.5 pl-4 sm:pl-7 pb-3 pr-5 mr-2 mb-0.5 custom-scrollbar overflow-y-auto flex flex-col gap-5">
               {filteredList.map(
                 ({ name, symbol, address, Logo }: Token, idx: number) => (
                   <article

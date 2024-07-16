@@ -3,13 +3,12 @@ import { Token } from "./useSwap.d";
 import { tokens, approve_stages } from "../mock-data";
 import { Icons } from "@/components/ui/icons";
 import { useRouter } from "next/navigation";
+import { useStorage } from "../useStorage";
 
 export const useSwap = () => {
   const router = useRouter();
-  const walkthrough: any = () =>
-    typeof window !== "undefined"
-      ? window?.localStorage?.getItem("walkthrough")
-      : null;
+  const [introTip, setIntroTip] = useState(0);
+  const { walkthrough } = useStorage(introTip);
 
   const [confirmSwap, setConfirmSwap] = useState(false);
   const [fromChains, setFromChains] = useState<Token[]>(tokens);
@@ -27,7 +26,6 @@ export const useSwap = () => {
   const [fromAmount, setFromAmount] = useState("");
   const [toAmount, setToAmount] = useState("");
   const [transactionState, setTransactionState] = useState("");
-  const [introTip, setIntroTip] = useState(0);
   const [slippage, setSlippage] = useState(0);
   const [fees, setFees] = useState("$94.38");
   const [priceImpact, setPriceImpact] = useState("-2.3%");
@@ -101,7 +99,7 @@ export const useSwap = () => {
     if (introTip == 3) {
       setFromToken(fromTokens[0] || {});
     } else {
-      if (!walkthrough()) setFromToken({});
+      if (walkthrough() == "false") setFromToken({});
     }
   }, [introTip]);
 

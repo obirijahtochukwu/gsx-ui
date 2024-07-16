@@ -29,14 +29,14 @@ export default function Walkthrough({
   const { walkthrough } = useSwap();
   const close = () => {
     setIntroTip(-1);
-    window?.localStorage.setItem("walkthrough", "true");
+    localStorage.setItem("walkthrough", JSON.stringify("true"));
   };
 
   return (
     <article className={`${className} relative`}>
       <div
         className={`${
-          introTip == id && introTip != 3 && !walkthrough()
+          introTip == id && introTip != 3 && walkthrough() == "false"
             ? "xlg:z-40 xlg:sticky"
             : ""
         } ${childrenStyle}`}
@@ -44,18 +44,18 @@ export default function Walkthrough({
         {children}
       </div>
       <section
-        className={`${
-          !walkthrough() && id == 1
+        className={`${walkthrough() == "true" ? "hidden" : ""} ${
+          id == 1 && introTip > -1
             ? " visible opacity-100 z-30"
             : " invisible opacity-0 duration-200"
-        } duration-100 w-screen h-screen top-0 left-0 fixed bg-walkthrough/50`}
+        } duration-300 w-screen h-screen top-0 left-0 fixed bg-walkthrough/50`}
       ></section>
 
       <section
         className={`${introTip == id && !disabled ? "" : "hidden"} ${
           position || "left-full"
         } ${margin} ${
-          walkthrough() && "hidden"
+          walkthrough() == "true" && "hidden"
         } absolute top-1/2 -translate-y-1/2 h-fit w-80 rounded-lg p-3 flex-col gap-1 bg-walkthrough z-40`}
       >
         <div

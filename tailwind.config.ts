@@ -33,10 +33,9 @@ module.exports = {
         "walkthrough-muted": "#232E33",
         dust: "#B9C2D7",
       },
-      backgroundSize: {
-        "max-sm": "140% 600px",
-      },
+
       height: {
+        xs: "calc(100vh - 310px)",
         mobile: "503px",
         desktop: "calc(100vh - 320px)",
       },

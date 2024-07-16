@@ -44,11 +44,11 @@ export default function SToken({
   const { walkthrough } = useSwap();
 
   const currentTip =
-    introTip == 3 && !walkthrough() && name == "fromTokens"
+    introTip == 3 && walkthrough() == "false" && name == "fromTokens"
       ? "!sticky xlg:z-40 "
-      : introTip == 2 && !walkthrough() && name == "fromTokens"
+      : introTip == 2 && walkthrough() == "false" && name == "fromTokens"
       ? "!sticky xlg:z-30 "
-      : introTip == 5 && !walkthrough() && name == "toTokens"
+      : introTip == 5 && walkthrough() == "false" && name == "toTokens"
       ? "!sticky xlg:z-30 "
       : "";
 

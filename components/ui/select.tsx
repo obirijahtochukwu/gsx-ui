@@ -42,7 +42,7 @@ export default function Select({
   return (
     <article
       className={`${
-        walkthrough() && " overflow-hidden"
+        walkthrough() == "true" && " overflow-hidden"
       } w-56 xl:w-side bg-light max-xlg:hidden h-fit rounded-3xl pt-4 pb-1`}
     >
       <div className=" text-primary text-base leading-none capitalize font-bold px-8">
@@ -79,7 +79,7 @@ export default function Select({
           placeholder="Search name or address"
           value={searchVal}
           onChange={(e) => setSearchVal(e.target.value)}
-          className=" text-muted text-sm font-normal h-full w-full bg-inherit border-none focus:outline-none"
+          className=" text-muted text-sm font-normal h-full w-full bg-inherit border-none pointer-events-none focus:outline-none"
         />
       </div>
       {filteredList.length > 0 ? (
@@ -94,7 +94,7 @@ export default function Select({
           introTip={introTip}
           margin="ml-3"
         >
-          <section className="h-desktop min-h-medium custom-scrollbar pb-3 pl-4 pr-3 overflow-y-auto mt-3 gap-4 grid-cols-12 grid">
+          <section className="h-desktop min-h-medium custom-scrollbar pb-3 pl-4 pr-3 overflow-y-auto pt-1 mt-3 gap-4 grid-cols-12 grid">
             {filteredList.map((token: Token, idx: number) => {
               const { name, symbol, address, Logo } = token;
               return (

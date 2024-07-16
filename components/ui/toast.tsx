@@ -33,9 +33,9 @@ export const ToastContainer = () => {
   }, [searchParams]);
 
   return (
-    <div
+    <article
       className={`${
-        store?.from?.length != 0 ? "bounce-in-right" : "roll-out-right hidden"
+        store?.from ? "bounce-in-right" : "hidden"
       } right-4 sm:right-10 duration-500 w-80 h-fit p-3 top-20 sm:top-24 z-20 fixed rounded-2xl border border-white/10 backdrop-blur-xl shadow-gsx bg-light flex`}
     >
       <div className="flex items-center">
@@ -63,6 +63,6 @@ export const ToastContainer = () => {
         onClick={() => close()}
         className="cursor-pointer ml-auto h-4 w-4"
       />
-    </div>
+    </article>
   );
 };
