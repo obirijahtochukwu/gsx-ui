@@ -35,7 +35,7 @@ module.exports = {
       },
 
       height: {
-        xs: "calc(100vh - 310px)",
+        xs: "calc(100vh - 280px)",
         mobile: "503px",
         desktop: "calc(100vh - 320px)",
       },
