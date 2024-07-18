@@ -12,7 +12,7 @@ export default function Sidebar({
 
   return (
     <section className="flex sm:hidden justify-between items-center mb-9">
-      <img src="/media/home/logo.png" className="" />
+      <Icons.mobileLogo />
       {address ? (
         <DisconnectWallet />
       ) : (

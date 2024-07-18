@@ -8,7 +8,7 @@ const font = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Next app",
+  title: "Vatom",
   description: "Swap crypto coins",
 };
 
